@@ -7,6 +7,7 @@
     empty: document.getElementById("empty-state"),
     count: document.getElementById("class-count"),
     randomBtn: document.getElementById("random-btn"),
+    chips: document.querySelectorAll(".chip"),
     playerBar: document.getElementById("player-bar"),
     audio: document.getElementById("audio"),
     nowTitle: document.getElementById("now-playing-title"),
@@ -14,6 +15,7 @@
   };
 
   let classes = [];
+  let difficulty = "all";
   let query = "";
   let currentId = null;
 
@@ -33,9 +35,24 @@
   }
 
   function matchesClass(item) {
+    const diff = item.difficulty || "";
+    if (difficulty !== "all" && normalize(diff) !== normalize(difficulty)) {
+      return false;
+    }
+
     const q = normalize(query);
     if (!q) return true;
-    return normalize(item.title).includes(q);
+
+    const hay = [
+      item.title,
+      item.difficulty,
+      item.notes,
+      ...(item.poses || []),
+    ]
+      .map(normalize)
+      .join(" ");
+
+    return hay.includes(q);
   }
 
   function filtered() {
@@ -46,10 +63,11 @@
     const items = filtered();
     els.list.innerHTML = "";
     els.empty.classList.toggle("hidden", items.length > 0);
-    els.count.textContent =
-      query.trim() && items.length !== classes.length
-        ? `${items.length} of ${classes.length} classes`
-        : `${classes.length} classes`;
+    const showing =
+      items.length === classes.length
+        ? `${classes.length} classes available`
+        : `${items.length} of ${classes.length} classes`;
+    els.count.textContent = showing;
 
     for (const item of items) {
       const li = document.createElement("li");
@@ -71,6 +89,30 @@
 
       top.append(title, dur);
       btn.append(top);
+
+      const tags = document.createElement("div");
+      tags.className = "row-tags";
+      let hasTags = false;
+
+      if (item.difficulty) {
+        const badge = document.createElement("span");
+        badge.className = "badge";
+        badge.textContent = item.difficulty;
+        tags.append(badge);
+        hasTags = true;
+      }
+
+      for (const pose of item.poses || []) {
+        if (!pose) continue;
+        const tag = document.createElement("span");
+        tag.className = "pose-tag";
+        tag.textContent = pose;
+        tags.append(tag);
+        hasTags = true;
+      }
+
+      if (hasTags) btn.append(tags);
+
       btn.addEventListener("click", () => playClass(item));
       li.append(btn);
       els.list.append(li);
@@ -81,7 +123,10 @@
     currentId = item.id;
     els.playerBar.classList.remove("hidden");
     els.nowTitle.textContent = item.title;
-    els.nowMeta.textContent = formatDuration(item.durationSec);
+
+    const bits = [formatDuration(item.durationSec)];
+    if (item.difficulty) bits.push(item.difficulty);
+    els.nowMeta.textContent = bits.join(" · ");
 
     els.audio.src = item.audio;
     els.audio.load();
@@ -114,6 +159,15 @@
       query = els.search.value;
       render();
     });
+
+    els.chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        difficulty = chip.dataset.difficulty || "all";
+        els.chips.forEach((c) => c.classList.toggle("is-active", c === chip));
+        render();
+      });
+    });
+
     els.randomBtn.addEventListener("click", pickRandom);
   }
 
@@ -125,7 +179,7 @@
       classes = await res.json();
       if (!Array.isArray(classes)) throw new Error("classes.json must be an array");
     } catch (err) {
-      els.count.textContent = "Could not load classes.json";
+      els.count.textContent = "Could not load classes";
       els.empty.textContent = String(err.message || err);
       els.empty.classList.remove("hidden");
       return;
@@ -144,7 +198,9 @@
         currentId = last.id;
         els.playerBar.classList.remove("hidden");
         els.nowTitle.textContent = last.title;
-        els.nowMeta.textContent = formatDuration(last.durationSec) + " · last played";
+        const bits = [formatDuration(last.durationSec)];
+        if (last.difficulty) bits.push(last.difficulty);
+        els.nowMeta.textContent = bits.join(" · ") + " · last played";
         els.audio.src = last.audio;
         els.audio.preload = "metadata";
         render();

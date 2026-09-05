@@ -3,32 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#1a1f1c" />
+  <meta name="theme-color" content="#090a09" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="description" content="Personal yoga class player" />
-  <title>Yoga classes</title>
+  <meta name="description" content="Studio Flows — personal yoga class player" />
+  <title>Studio Flows</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="app">
     <header class="header">
-      <h1>Yoga classes</h1>
-      <p class="subtitle" id="class-count">Loading…</p>
+      <p class="eyebrow" id="class-count">Loading…</p>
+      <h1>Studio Flows</h1>
     </header>
 
-    <section class="controls" aria-label="Search">
+    <section class="controls" aria-label="Search and filters">
       <label class="search-wrap">
         <span class="sr-only">Search classes</span>
         <input
           type="search"
           id="search"
-          placeholder="Search classes…"
+          placeholder="Search title, difficulty, poses…"
           autocomplete="off"
           enterkeyhint="search"
         />
       </label>
 
-      <button type="button" id="random-btn" class="random-btn">Random class</button>
+      <div class="chips" role="group" aria-label="Difficulty">
+        <button type="button" class="chip is-active" data-difficulty="all">All</button>
+        <button type="button" class="chip" data-difficulty="Beginner">Beginner</button>
+        <button type="button" class="chip" data-difficulty="Intermediate">Intermediate</button>
+        <button type="button" class="chip" data-difficulty="Advanced">Advanced</button>
+        <button type="button" class="chip" data-difficulty="All Levels">All Levels</button>
+      </div>
+
+      <button type="button" id="random-btn" class="random-btn">Play Random Class</button>
     </section>
 
     <main>
@@ -38,9 +46,12 @@
   </div>
 
   <div id="player-bar" class="player-bar hidden" role="region" aria-label="Now playing">
-    <div class="player-meta">
-      <div id="now-playing-title" class="now-title">—</div>
-      <div id="now-playing-meta" class="now-meta"></div>
+    <div class="player-top">
+      <div class="player-meta">
+        <div id="now-playing-title" class="now-title">—</div>
+        <div id="now-playing-meta" class="now-meta"></div>
+      </div>
+      <div class="live-dot" aria-hidden="true"><span></span></div>
     </div>
     <audio id="audio" controls preload="metadata" playsinline></audio>
   </div>

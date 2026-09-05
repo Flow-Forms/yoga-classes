@@ -1,98 +1,216 @@
 [
   {
     "id": "class-01",
-    "title": "Class 1",
+    "title": "Seated Cat-Cow & Runner's Lunge",
     "audio": "audio/class-01.m4a",
-    "durationSec": 4003
+    "durationSec": 4003,
+    "difficulty": "All Levels",
+    "poses": [
+      "Seated Cat-Cow",
+      "Runner's Lunge",
+      "Low Lunge",
+      "Cactus Arms"
+    ],
+    "notes": "Belly-breath warm-up into controlled hip-flexor work with optional blocks"
   },
   {
     "id": "class-02",
-    "title": "Class 2",
+    "title": "Centering Breath & Child's Pose",
     "audio": "audio/class-02.m4a",
-    "durationSec": 3954
+    "durationSec": 3954,
+    "difficulty": "Beginner",
+    "poses": [
+      "Child's Pose",
+      "Tabletop",
+      "Plank"
+    ],
+    "notes": "Slow centering and longer exhales, then rest into gentle activation"
   },
   {
     "id": "class-03",
-    "title": "Class 3",
+    "title": "Neck Release & Gentle Backbends",
     "audio": "audio/class-03.m4a",
-    "durationSec": 2974
+    "durationSec": 2974,
+    "difficulty": "All Levels",
+    "poses": [
+      "Staff Pose",
+      "Child's Pose",
+      "Modified Plank",
+      "Cobra"
+    ],
+    "notes": "Neck and shoulder stretches with ujjayi; crawl-under-fence into cobra"
   },
   {
     "id": "class-04",
-    "title": "Class 4",
+    "title": "Seated Folds & Strap Work",
     "audio": "audio/class-04.m4a",
-    "durationSec": 3154
+    "durationSec": 3154,
+    "difficulty": "Intermediate",
+    "poses": [
+      "Seated Forward Fold",
+      "Runner's Lunge"
+    ],
+    "notes": "Strap-assisted seated folds and twists; blocks under sitting bones"
   },
   {
     "id": "class-05",
-    "title": "Class 5",
+    "title": "Supine Stretch & Bridge",
     "audio": "audio/class-05.m4a",
-    "durationSec": 4183
+    "durationSec": 4183,
+    "difficulty": "All Levels",
+    "poses": [
+      "Star Pose",
+      "Bridge Pose",
+      "Cactus Arms",
+      "Seated Twist"
+    ],
+    "notes": "Floor warm-up into bridge, then twists as counterposes"
   },
   {
     "id": "class-06",
-    "title": "Class 6",
+    "title": "Easeful Alignment Flow",
     "audio": "audio/class-06.m4a",
-    "durationSec": 2696
+    "durationSec": 2696,
+    "difficulty": "All Levels",
+    "poses": [
+      "Child's Pose",
+      "Tabletop",
+      "Side Stretch"
+    ],
+    "notes": "Sthira/sukha theme\u2014strength with ease; tabletop into side opening"
   },
   {
     "id": "class-07",
-    "title": "Class 7",
+    "title": "Shoulder Openers & Heart Lifts",
     "audio": "audio/class-07.m4a",
-    "durationSec": 4509
+    "durationSec": 4509,
+    "difficulty": "Intermediate",
+    "poses": [
+      "Cactus Arms",
+      "Eagle Arms",
+      "Reverse Prayer",
+      "Locust Pose"
+    ],
+    "notes": "Upper-body mobility (binds, reverse prayer) into prone heart lifts"
   },
   {
     "id": "class-08",
-    "title": "Class 8",
+    "title": "Morning Centering & Forward Folds",
     "audio": "audio/class-08.m4a",
-    "durationSec": 2986
+    "durationSec": 2986,
+    "difficulty": "Beginner",
+    "poses": [
+      "Cactus Arms",
+      "Standing Forward Fold",
+      "Child's Pose",
+      "Tabletop"
+    ],
+    "notes": "Expansive breath and self-hug, then gentle forward folding"
   },
   {
     "id": "class-09",
-    "title": "Class 9",
+    "title": "Hero's Pose & Hip Stretch",
     "audio": "audio/class-09.m4a",
-    "durationSec": 3271
+    "durationSec": 3271,
+    "difficulty": "Intermediate",
+    "poses": [
+      "Hero's Pose",
+      "Cat Stretch",
+      "Seated Forward Fold"
+    ],
+    "notes": "Arms and shoulders in hero's, then strap work into the hips"
   },
   {
     "id": "class-10",
-    "title": "Class 10",
+    "title": "Hara Focus \u00b7 Yoga Squats",
     "audio": "audio/class-10.m4a",
-    "durationSec": 3476
+    "durationSec": 3476,
+    "difficulty": "Intermediate",
+    "poses": [
+      "Child's Pose",
+      "Half Moon",
+      "Yoga Squat"
+    ],
+    "notes": "Inward/hara theme; half moon into malasana-style squats"
   },
   {
     "id": "class-11",
-    "title": "Class 11",
+    "title": "Class 11 \u00b7 Breath & Standing Folds",
     "audio": "audio/class-11.m4a",
-    "durationSec": 3767
+    "durationSec": 3767,
+    "difficulty": "All Levels",
+    "poses": [
+      "Plank",
+      "Forward Fold"
+    ],
+    "notes": "Opening breathwork (ASR noisy); mid class has plank and standing folds"
   },
   {
     "id": "class-12",
-    "title": "Class 12",
+    "title": "Butterfly Hips & Soft Floor Flow",
     "audio": "audio/class-12.m4a",
-    "durationSec": 3467
+    "durationSec": 3467,
+    "difficulty": "Beginner",
+    "poses": [
+      "Bound Angle Pose",
+      "Windshield Wipers"
+    ],
+    "notes": "Gentle hip openers; eyes-closed, restorative floor practice"
   },
   {
     "id": "class-13",
-    "title": "Class 13",
+    "title": "Active Flow \u00b7 Child's Pose Resets",
     "audio": "audio/class-13.m4a",
-    "durationSec": 4036
+    "durationSec": 4036,
+    "difficulty": "Intermediate",
+    "poses": [
+      "Child's Pose",
+      "Plank",
+      "Downward-Facing Dog"
+    ],
+    "notes": "More active than prior week; optional vinyasa with child's pose rests (opening has pre-class chatter)"
   },
   {
     "id": "class-14",
-    "title": "Class 14",
+    "title": "Spine Warm-Up & Yoga Squats",
     "audio": "audio/class-14.m4a",
-    "durationSec": 3223
+    "durationSec": 3223,
+    "difficulty": "All Levels",
+    "poses": [
+      "Seated Cat-Cow",
+      "Child's Pose",
+      "Yoga Squat"
+    ],
+    "notes": "Seated spine/shoulder warm-up into squats and adductor work"
   },
   {
     "id": "class-15",
-    "title": "Class 15",
+    "title": "Slow Strength \u00b7 Plank & Chaturanga",
     "audio": "audio/class-15.m4a",
-    "durationSec": 3776
+    "durationSec": 3776,
+    "difficulty": "Intermediate",
+    "poses": [
+      "Easy Seat",
+      "Cat Pose",
+      "Plank",
+      "Chaturanga",
+      "Child's Pose"
+    ],
+    "notes": "Neck/spine seated warm-up into slow strengthening vinyasa"
   },
   {
     "id": "class-16",
-    "title": "Class 16",
+    "title": "Forearm Strength \u00b7 Dolphin",
     "audio": "audio/class-16.m4a",
-    "durationSec": 2551
+    "durationSec": 2551,
+    "difficulty": "Intermediate",
+    "poses": [
+      "Seated Cat-Cow",
+      "Dolphin Pose",
+      "Forearm Plank",
+      "Downward-Facing Dog",
+      "Sphinx Pose"
+    ],
+    "notes": "Seated spine warm-up into dolphin, forearm plank, and dog transitions"
   }
 ]

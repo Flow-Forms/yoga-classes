@@ -1,14 +1,8 @@
-# Yoga classes
+# Studio Flows
 
 Phone-friendly player for personal yoga recordings.
 
 - Live: https://flow-forms.github.io/yoga-classes/
-- Search by title, tap a class to play, or hit **Random class**
+- Search title / difficulty / poses, filter by difficulty, or **Play Random Class**
 
-## Files
-
-- `index.html` / `app.js` / `styles.css` — player UI
-- `classes.json` — title, audio path, duration
-- `audio/` — cleaned class recordings
-
-Rename titles in `classes.json` if you want friendlier names than Class 1…16.
+Edit `classes.json` to rename classes or tweak difficulty and poses.
