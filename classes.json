@@ -1,0 +1,146 @@
+[
+  {
+    "id": "class-01",
+    "title": "Class 1",
+    "audio": "audio/class-01.m4a",
+    "durationSec": 4003,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-02",
+    "title": "Class 2",
+    "audio": "audio/class-02.m4a",
+    "durationSec": 3954,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-03",
+    "title": "Class 3",
+    "audio": "audio/class-03.m4a",
+    "durationSec": 2974,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-04",
+    "title": "Class 4",
+    "audio": "audio/class-04.m4a",
+    "durationSec": 3154,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-05",
+    "title": "Class 5",
+    "audio": "audio/class-05.m4a",
+    "durationSec": 4183,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-06",
+    "title": "Class 6",
+    "audio": "audio/class-06.m4a",
+    "durationSec": 2696,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-07",
+    "title": "Class 7",
+    "audio": "audio/class-07.m4a",
+    "durationSec": 4509,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-08",
+    "title": "Class 8",
+    "audio": "audio/class-08.m4a",
+    "durationSec": 2986,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-09",
+    "title": "Class 9",
+    "audio": "audio/class-09.m4a",
+    "durationSec": 3271,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-10",
+    "title": "Class 10",
+    "audio": "audio/class-10.m4a",
+    "durationSec": 3476,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-11",
+    "title": "Class 11",
+    "audio": "audio/class-11.m4a",
+    "durationSec": 3767,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-12",
+    "title": "Class 12",
+    "audio": "audio/class-12.m4a",
+    "durationSec": 3467,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-13",
+    "title": "Class 13",
+    "audio": "audio/class-13.m4a",
+    "durationSec": 4036,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-14",
+    "title": "Class 14",
+    "audio": "audio/class-14.m4a",
+    "durationSec": 3223,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-15",
+    "title": "Class 15",
+    "audio": "audio/class-15.m4a",
+    "durationSec": 3776,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  },
+  {
+    "id": "class-16",
+    "title": "Class 16",
+    "audio": "audio/class-16.m4a",
+    "durationSec": 2551,
+    "difficulty": "",
+    "poses": [],
+    "notes": ""
+  }
+]

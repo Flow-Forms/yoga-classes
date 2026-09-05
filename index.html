@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a1f1c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="description" content="Personal yoga class player" />
+  <title>Yoga classes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Yoga classes</h1>
+      <p class="subtitle" id="class-count">Loading…</p>
+    </header>
+
+    <section class="controls" aria-label="Search and filters">
+      <label class="search-wrap">
+        <span class="sr-only">Search classes</span>
+        <input
+          type="search"
+          id="search"
+          placeholder="Search title, difficulty, poses…"
+          autocomplete="off"
+          enterkeyhint="search"
+        />
+      </label>
+
+      <div class="chips" role="group" aria-label="Difficulty">
+        <button type="button" class="chip is-active" data-difficulty="all">All</button>
+        <button type="button" class="chip" data-difficulty="Beginner">Beginner</button>
+        <button type="button" class="chip" data-difficulty="Intermediate">Intermediate</button>
+        <button type="button" class="chip" data-difficulty="Advanced">Advanced</button>
+      </div>
+
+      <button type="button" id="random-btn" class="random-btn">Random class</button>
+    </section>
+
+    <main>
+      <ul id="class-list" class="class-list" aria-live="polite"></ul>
+      <p id="empty-state" class="empty-state hidden">No classes match.</p>
+    </main>
+  </div>
+
+  <div id="player-bar" class="player-bar hidden" role="region" aria-label="Now playing">
+    <div class="player-meta">
+      <div id="now-playing-title" class="now-title">—</div>
+      <div id="now-playing-meta" class="now-meta"></div>
+    </div>
+    <audio id="audio" controls preload="metadata" playsinline></audio>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
