@@ -7,10 +7,7 @@
   --border: #d8d2c6;
   --accent: #2f6b57;
   --accent-soft: #dceee6;
-  --chip: #ebe5db;
-  --chip-active: #2f6b57;
   --chip-active-text: #f7fffb;
-  --danger-soft: #f0e6df;
   --shadow: 0 8px 24px rgba(28, 36, 32, 0.08);
   --radius: 16px;
   --touch: 48px;
@@ -28,17 +25,12 @@
     --border: #2c3530;
     --accent: #7bc4a8;
     --accent-soft: #24352e;
-    --chip: #243029;
-    --chip-active: #7bc4a8;
     --chip-active-text: #102018;
-    --danger-soft: #322824;
     --shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
   }
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
   margin: 0;
@@ -66,9 +58,7 @@ body {
   border: 0;
 }
 
-.hidden {
-  display: none !important;
-}
+.hidden { display: none !important; }
 
 .app {
   max-width: 720px;
@@ -112,31 +102,6 @@ body {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.chip {
-  min-height: 40px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--chip);
-  color: var(--text);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.chip.is-active {
-  background: var(--chip-active);
-  border-color: var(--chip-active);
-  color: var(--chip-active-text);
-}
-
 .random-btn {
   min-height: var(--touch);
   border: none;
@@ -151,7 +116,6 @@ body {
 }
 
 .random-btn:active,
-.chip:active,
 .class-row:active {
   transform: scale(0.985);
 }
@@ -202,34 +166,6 @@ body {
   font-size: 0.95rem;
 }
 
-.row-tags {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.badge,
-.pose-tag {
-  display: inline-flex;
-  align-items: center;
-  min-height: 28px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
-.badge {
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-
-.pose-tag {
-  background: var(--chip);
-  color: var(--muted);
-}
-
 .empty-state {
   margin: 28px 8px;
   text-align: center;
@@ -275,7 +211,5 @@ body {
 }
 
 @media (min-width: 720px) {
-  .app {
-    padding-top: 32px;
-  }
+  .app { padding-top: 32px; }
 }

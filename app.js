@@ -7,7 +7,6 @@
     empty: document.getElementById("empty-state"),
     count: document.getElementById("class-count"),
     randomBtn: document.getElementById("random-btn"),
-    chips: document.querySelectorAll(".chip"),
     playerBar: document.getElementById("player-bar"),
     audio: document.getElementById("audio"),
     nowTitle: document.getElementById("now-playing-title"),
@@ -15,7 +14,6 @@
   };
 
   let classes = [];
-  let difficulty = "all";
   let query = "";
   let currentId = null;
 
@@ -35,24 +33,9 @@
   }
 
   function matchesClass(item) {
-    const diff = item.difficulty || "";
-    if (difficulty !== "all" && normalize(diff) !== normalize(difficulty)) {
-      return false;
-    }
-
     const q = normalize(query);
     if (!q) return true;
-
-    const hay = [
-      item.title,
-      item.difficulty,
-      item.notes,
-      ...(item.poses || []),
-    ]
-      .map(normalize)
-      .join(" ");
-
-    return hay.includes(q);
+    return normalize(item.title).includes(q);
   }
 
   function filtered() {
@@ -63,7 +46,10 @@
     const items = filtered();
     els.list.innerHTML = "";
     els.empty.classList.toggle("hidden", items.length > 0);
-    els.count.textContent = `${classes.length} classes · ${items.length} showing`;
+    els.count.textContent =
+      query.trim() && items.length !== classes.length
+        ? `${items.length} of ${classes.length} classes`
+        : `${classes.length} classes`;
 
     for (const item of items) {
       const li = document.createElement("li");
@@ -85,30 +71,6 @@
 
       top.append(title, dur);
       btn.append(top);
-
-      const tags = document.createElement("div");
-      tags.className = "row-tags";
-      let hasTags = false;
-
-      if (item.difficulty) {
-        const badge = document.createElement("span");
-        badge.className = "badge";
-        badge.textContent = item.difficulty;
-        tags.append(badge);
-        hasTags = true;
-      }
-
-      for (const pose of item.poses || []) {
-        if (!pose) continue;
-        const tag = document.createElement("span");
-        tag.className = "pose-tag";
-        tag.textContent = pose;
-        tags.append(tag);
-        hasTags = true;
-      }
-
-      if (hasTags) btn.append(tags);
-
       btn.addEventListener("click", () => playClass(item));
       li.append(btn);
       els.list.append(li);
@@ -119,19 +81,13 @@
     currentId = item.id;
     els.playerBar.classList.remove("hidden");
     els.nowTitle.textContent = item.title;
+    els.nowMeta.textContent = formatDuration(item.durationSec);
 
-    const bits = [formatDuration(item.durationSec)];
-    if (item.difficulty) bits.push(item.difficulty);
-    els.nowMeta.textContent = bits.join(" · ");
-
-    // iOS Safari: set src then load before play
     els.audio.src = item.audio;
     els.audio.load();
     const playPromise = els.audio.play();
     if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(() => {
-        /* user gesture may still open controls if autoplay blocked */
-      });
+      playPromise.catch(() => {});
     }
 
     try {
@@ -150,8 +106,7 @@
       const others = items.filter((c) => c.id !== currentId);
       if (others.length) pool = others;
     }
-    const pick = pool[Math.floor(Math.random() * pool.length)];
-    playClass(pick);
+    playClass(pool[Math.floor(Math.random() * pool.length)]);
   }
 
   function bind() {
@@ -159,15 +114,6 @@
       query = els.search.value;
       render();
     });
-
-    els.chips.forEach((chip) => {
-      chip.addEventListener("click", () => {
-        difficulty = chip.dataset.difficulty || "all";
-        els.chips.forEach((c) => c.classList.toggle("is-active", c === chip));
-        render();
-      });
-    });
-
     els.randomBtn.addEventListener("click", pickRandom);
   }
 
@@ -198,9 +144,7 @@
         currentId = last.id;
         els.playerBar.classList.remove("hidden");
         els.nowTitle.textContent = last.title;
-        const bits = [formatDuration(last.durationSec)];
-        if (last.difficulty) bits.push(last.difficulty);
-        els.nowMeta.textContent = bits.join(" · ") + " · last played";
+        els.nowMeta.textContent = formatDuration(last.durationSec) + " · last played";
         els.audio.src = last.audio;
         els.audio.preload = "metadata";
         render();
